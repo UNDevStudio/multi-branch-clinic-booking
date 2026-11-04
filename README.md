@@ -13,6 +13,8 @@ This project compares Advanced Custom Fields (ACF) with native WordPress custom 
 | Future Maintenance | Depends partly on plugin compatibility and updates | Full control over code and maintenance |
 | Scalability | Supports flexible field groups | Can be extended through custom development |
 
+For the detailed comparison and implementation decision, see [DECISION_LOG.md](DECISION_LOG.md).
+
 ### Final Decision
 
 I selected native WordPress custom fields for managing Branch and Doctor data. This approach provides better control over field registration, validation, and data management while reducing additional plugin dependencies. Although ACF is easier for non-technical users, native fields offer more flexibility for long-term maintenance and future scalability.

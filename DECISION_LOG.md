@@ -25,10 +25,6 @@
 
 ## Final Decision
 
-### Selected Approach: Native WordPress Custom Fields
-
-I have chosen native WordPress custom fields for the Branch and Doctor data. This approach provides better control over field registration, validation, and data management without requiring an additional plugin dependency.
-
-Although ACF offers an easier visual interface for managing fields, native custom fields are a better fit for this project because they allow custom development, reduce plugin dependency, and provide flexibility for future maintenance and scalability. The additional PHP development effort is acceptable for this project.
+I have selected native WordPress custom fields using register_post_meta() for Branch and Doctor data. This approach avoids an additional plugin dependency and provides direct control over field registration, validation, sanitization, and permissions. Both approaches use WordPress post meta storage, so query performance will depend on how the data is structured and queried. Native fields are the better fit for this project because they provide flexibility and control for long-term maintenance.
 
 Pending research and evaluation.
