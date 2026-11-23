@@ -90,10 +90,69 @@ The demo data generation functionality is implemented in:
 
 ---
 
+## Front-End Branch and Doctor Templates
+
+The project includes custom front-end templates in the Twenty Twenty-Five child theme.
+
+### Branch Detail Page
+
+The `single-clinic_branch.php` template displays:
+
+- Branch name
+- Branch address
+- Contact phone number
+- Opening hours
+- Doctors assigned to the branch
+
+Doctors are retrieved using `WP_Query` and the `doctor_branch_id` custom field. The meta query uses the `NUMERIC` type to match branch IDs correctly.
+
+Each doctor name links to its individual doctor detail page.
+
+### Doctor Detail Page
+
+The `single-clinic_doctor.php` template displays:
+
+- Doctor name
+- Medical specialty
+- Contact phone number
+- Assigned clinic branch with a link to its detail page
+- **Book an Appointment** button
+
+The booking button links to the WordPress page with the `book-appointment` slug.
+
+### Responsive Design
+
+The child theme includes responsive CSS for desktop, tablet, and mobile screen sizes.
+
+The branch doctor grid adjusts its columns according to screen width, while doctor detail pages and booking buttons remain accessible on smaller screens.
+
+### Child Theme Files
+
+The child theme files are included in this repository under `child-theme/` for project review.
+
+To use the templates on the local WordPress site, place the files in the active child theme directory:
+
+`wp-content/themes/twentytwentyfive-child/`
+
+The child theme contains:
+
+- `style.css` – Theme information and responsive front-end styles.
+- `functions.php` – Enqueues parent and child theme stylesheets.
+- `single-clinic_branch.php` – Branch detail page template.
+- `single-clinic_doctor.php` – Doctor detail page template.
+
+---
+
 ## Plugin Structure
 
 ```text
 multi-branch-clinic-booking/
+│
+├── child-theme/
+│   ├── functions.php
+│   ├── single-clinic_branch.php
+│   ├── single-clinic_doctor.php
+│   └── style.css
 │
 ├── includes/
 │   ├── post-types.php
@@ -111,6 +170,7 @@ multi-branch-clinic-booking/
 - `includes/post-types.php` – Registers Branch and Doctor custom post types.
 - `includes/custom-fields.php` – Registers native custom fields, meta boxes, and save functionality.
 - `includes/seed-data.php` – Generates demo branches and doctors.
+- `child-theme/` – Contains the front-end child theme templates and styles.
 - `DECISION_LOG.md` – Documents the custom field implementation decision.
 
 ---
